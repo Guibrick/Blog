@@ -5,13 +5,9 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import resultProps from "../Types/ResultProps";
 
-type resultProps = {
-    id: number;
-    title: string;
-    body: string;
-    tags: string;
-};
+
 
 function Posts() {
     const [result, setResult] = useState<resultProps[]>([]);
@@ -30,7 +26,7 @@ function Posts() {
         getData();
     }, []);
 
-    const mapping = result.map((value) => {
+    const postsMapping = result.map((value) => {
         return (
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
@@ -53,7 +49,7 @@ function Posts() {
     return (
         <>
             <div>
-                {mapping}
+                {postsMapping}
             </div>
         </>
     )
