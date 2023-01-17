@@ -30,36 +30,31 @@ function Posts() {
         getData();
     }, []);
 
-    const mapping = result.map((value) => { return (
-        <Card sx={{ minWidth: 275 }}>
-            <CardContent>
-                <Typography variant="h5" component="div">
-                    {value.title}
-                </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    {value.tags}
-                </Typography>
-                <Typography variant="body2">
-                    {value.body}
-                    <br />
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Learn More</Button>
-            </CardActions>
-        </Card>)
+    const mapping = result.map((value) => {
+        return (
+            <Card sx={{ minWidth: 275 }}>
+                <CardContent>
+                    <Typography variant="h5" component="div">
+                        {value.title}
+                    </Typography>
+                    <Typography variant="body2">
+                        {value.body}
+                        <br />
+                    </Typography>
+                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                        {value.tags}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                </CardActions>
+            </Card>)
     });
 
     return (
         <>
-            <Box
-                component="span"
-                sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-            >
-                <div>
-                    {mapping}
-                </div>
-            </Box>
+            <div>
+                {mapping}
+            </div>
         </>
     )
 }
