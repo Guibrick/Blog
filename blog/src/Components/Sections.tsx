@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { styled } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
-import Posts from '../Components/Posts';
+import History from '../Components/Posts';
+import Tags from '../Components/Tags';
 import resultProps from '../Types/ResultProps';
 
 const Root = styled('div')(({ theme }) => ({
@@ -17,7 +18,7 @@ const Root = styled('div')(({ theme }) => ({
 function Sections() {
     const content = (
         <div>
-            <Posts />
+            <History />
         </div>)
 
     const [result, setResult] = useState<resultProps[]>([]);

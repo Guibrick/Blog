@@ -7,7 +7,7 @@ import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 import resultProps from "../Types/ResultProps";
 
-function History() {
+function Magical() {
     const [result, setResult] = useState<resultProps[]>([]);
 
     useEffect(() => {
@@ -24,12 +24,12 @@ function History() {
         getData();
     }, []);
 
-    const history = result.filter(e => e.tags.includes('history'));
+    const magical = result.filter(e => e.tags.includes('magical'));
 
     return (
         <>
             <div>
-                {history.map((value) => {
+                {magical.map((value) => {
                     return (
                         <Card sx={{ minWidth: 275 }}>
                             <CardContent>
@@ -46,10 +46,11 @@ function History() {
                             </CardContent>
                             <CardActions>
                             </CardActions>
-                        </Card>)})}
+                        </Card>)
+                })}
             </div>
         </>
     )
 }
 
-export default History;
+export default Magical;

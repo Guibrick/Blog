@@ -11,27 +11,33 @@ function Tags() {
             });
             const jsonData = await data.json();
 
-            console.log(tag)
-
             setTag(jsonData.posts)
         }
         getData();
     }, []);
 
-    const tagMapping = tag.map((value) => {
-        return (
-            <div>
-                <div>{value.tags[0]}</div>
-                <div>{value.tags[1]}</div>
-                <div>{value.tags[2]}</div>
-            </div>
-        )
-    });
+    const crime = tag.filter(e => e.tags.includes('crime'));
+    const magical = tag.filter(e => e.tags.includes('magical'));
+    const fiction = tag.filter(e => e.tags.includes('fiction'));
+    const classic = tag.filter(e => e.tags.includes('classic'));
+    const history = tag.filter(e => e.tags.includes('history'));
 
     return (
         <>
             <div>
-                {tagMapping}
+                <h1>History section</h1>
+                {history.map((value) => {
+                    return (
+                        <div className="article">
+                            <div className='divtags'>
+                                <p className='ptags' key={value.tags[0]}>{value.tags[0]}</p>
+                                <p className='ptags' key={value.tags[1]}>{value.tags[1]}</p>
+                                <p className='ptags' key={value.tags[2]}>{value.tags[2]}</p>
+                            </div>
+                        </div>
+                    )
+                })
+                }
             </div>
         </>
     )

@@ -1,10 +1,9 @@
 import React from 'react';
-import Posts from './Components/Posts';
-import Tags from './Components/Tags';
+import Dropdown from './Components/Dropdown';
 
 function App() {
-  return (
-    <Tags />
+    return (
+        <Dropdown />
   );
 }
 

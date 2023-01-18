@@ -7,7 +7,7 @@ import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 import resultProps from "../Types/ResultProps";
 
-function History() {
+function Classic() {
     const [result, setResult] = useState<resultProps[]>([]);
 
     useEffect(() => {
@@ -24,12 +24,12 @@ function History() {
         getData();
     }, []);
 
-    const history = result.filter(e => e.tags.includes('history'));
+    const classic = result.filter(e => e.tags.includes('classic'));
 
     return (
         <>
             <div>
-                {history.map((value) => {
+                {classic.map((value) => {
                     return (
                         <Card sx={{ minWidth: 275 }}>
                             <CardContent>
@@ -46,10 +46,11 @@ function History() {
                             </CardContent>
                             <CardActions>
                             </CardActions>
-                        </Card>)})}
+                        </Card>)
+                })}
             </div>
         </>
     )
 }
 
-export default History;
+export default Classic;

@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src\\Components"
+    "\\src",
+    "\\src\\Components",
+    "\\src\\Types"
   ],
+  "SelectedNode": "\\src\\Types\\TagProps.tsx",
   "PreviewInSolutionExplorer": false
 }
