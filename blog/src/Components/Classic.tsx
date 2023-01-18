@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Chip from '@mui/material/Chip';
-import Typography from '@mui/material/Typography';
+import { Card, CardActions, CardContent, Chip, Typography } from '@mui/material';
 import resultProps from "../Types/ResultProps";
 
 function Classic() {
@@ -16,9 +11,6 @@ function Classic() {
                 method: "GET"
             });
             const jsonData = await data.json();
-
-            console.log(result)
-
             setResult(jsonData.posts)
         }
         getData();
@@ -27,29 +19,27 @@ function Classic() {
     const classic = result.filter(e => e.tags.includes('classic'));
 
     return (
-        <>
-            <div>
-                {classic.map((value) => {
-                    return (
-                        <Card sx={{ minWidth: 275 }}>
-                            <CardContent>
-                                <Typography variant="h5" component="div">
-                                    {value.title}
-                                </Typography>
-                                <Typography variant="body2">
-                                    {value.body}
-                                    <br />
-                                </Typography>
-                                <Chip label={value.tags[0]} />
-                                <Chip label={value.tags[1]} />
-                                <Chip label={value.tags[2]} />
-                            </CardContent>
-                            <CardActions>
-                            </CardActions>
-                        </Card>)
-                })}
-            </div>
-        </>
+        <div>
+            {classic.map((value) => {
+                return (
+                    <Card id="card" sx={{ minWidth: 275 }} >
+                        <CardContent>
+                            <Typography variant="h5" fontWeight="bold" sx={{ m: 1 }}>
+                                {value.title}
+                            </Typography>
+                            <Typography variant="body2" sx={{ m: 1 }}>
+                                {value.body}
+                                <br />
+                            </Typography >
+                            <Chip sx={{ m: 0.3 }} label={value.tags[0]} />
+                            <Chip sx={{ m: 0.3 }} label={value.tags[1]} />
+                            <Chip sx={{ m: 0.3 }} label={value.tags[2]} />
+                        </CardContent>
+                        <CardActions>
+                        </CardActions>
+                    </Card>)
+            })}
+        </div>
     )
 }
 

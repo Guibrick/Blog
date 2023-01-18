@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, CardActions, CardContent, Chip, Typography } from '@mui/material';
 import resultProps from "../Types/ResultProps";
 
-function Crime() {
+function History() {
     const [result, setResult] = useState<resultProps[]>([]);
 
     useEffect(() => {
@@ -16,11 +16,11 @@ function Crime() {
         getData();
     }, []);
 
-    const crime = result.filter(e => e.tags.includes('crime'));
+    const history = result.filter(e => e.tags.includes('history'));
 
     return (
         <div>
-            {crime.map((value) => {
+            {history.map((value) => {
                 return (
                     <Card id="card" sx={{ minWidth: 275 }} >
                         <CardContent>
@@ -43,4 +43,4 @@ function Crime() {
     )
 }
 
-export default Crime;
+export default History;
